@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>남해 해성고등학교 홈페이지</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <img src="images/haeseong-logo.png" alt="남해 해성고등학교 로고" width="120" />
+    <h1 id="school-name" tabindex="0">남해 해성고등학교</h1>
+    <nav aria-label="주요 메뉴">
+      <ul>
+        <li><a href="#today-meal" tabindex="0">오늘의 급식</a></li>
+        <li><a href="#upcoming-schedule" tabindex="0">다가오는 일정</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="today-meal" aria-labelledby="meal-title">
+      <h2 id="meal-title" tabindex="0">오늘의 급식</h2>
+      <button onclick="speakText('오늘의 급식: 컵라면, 떡볶이, 순대, 김말이, 후리카케 밥, 단무지, 방울토마토')" aria-label="오늘의 급식 음성 안내">음성 안내</button>
+      <ul>
+        <li>
+          <img src="images/cup-noodle.jpg" alt="컵라면 이미지" width="60" />
+          컵라면
+        </li>
+        <li>
+          <img src="images/tteokbokki.jpg" alt="떡볶이 이미지" width="60" />
+          떡볶이
+        </li>
+        <li>
+          <img src="images/sundae.jpg" alt="순대 이미지" width="60" />
+          순대
+        </li>
+        <li>
+          <img src="images/gimmari.jpg" alt="김말이 이미지" width="60" />
+          김말이
+        </li>
+        <li>
+          <img src="images/furikake-rice.jpg" alt="후리카케 밥 이미지" width="60" />
+          후리카케 밥
+        </li>
+        <li>
+          <img src="images/danmuji.jpg" alt="단무지 이미지" width="60" />
+          단무지
+        </li>
+        <li>
+          <img src="images/cherry-tomato.jpg" alt="방울토마토 이미지" width="60" />
+          방울토마토
+        </li>
+      </ul>
+    </section>
+    <section id="upcoming-schedule" aria-labelledby="schedule-title">
+      <h2 id="schedule-title" tabindex="0">다가오는 일정</h2>
+      <button onclick="speakText('다가오는 일정: 7월 14일 자율적 교육과정 실시, 7월 18일 방학식')" aria-label="다가오는 일정 음성 안내">음성 안내</button>
+      <ul>
+        <li>
+          <img src="images/calendar.jpg" alt="달력 아이콘" width="30" />
+          <strong>7월 14일</strong>: 자율적 교육과정 실시
+        </li>
+        <li>
+          <img src="images/calendar.jpg" alt="달력 아이콘" width="30" />
+          <strong>7월 18일</strong>: 방학식
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 남해 해성고등학교</p>
+  </footer>
+
+  <script>
+  function speakText(text) {
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ko-KR';
+    window.speechSynthesis.speak(utterance);
+  }
+  </script>
+</body>
+</html>
